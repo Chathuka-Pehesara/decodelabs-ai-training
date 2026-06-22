@@ -65,3 +65,22 @@ def print_goodbye(messages_exchanged: int, unmatched_count: int) -> None:
     print(f"{border}{COLOR_THEME['RESET']}")
 
 
+def main() -> None:
+    
+    print_banner()
+    
+    messages_exchanged = 0
+    unmatched_log: List[str] = []
+    fallback_message = "I don't understand that yet. Try 'help' to see what I can do."
+    
+    while True:
+        sys.stdout.write(f"{COLOR_THEME['USER']}You: {COLOR_THEME['RESET']}")
+        sys.stdout.flush()
+        
+        try:
+            raw_input = input()
+        except EOFError:
+            break
+            
+        # Temporarily pass to avoid syntax errors
+        pass
