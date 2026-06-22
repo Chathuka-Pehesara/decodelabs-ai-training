@@ -52,3 +52,16 @@ def get_response(user_input:str, responses_db: Dict[str,str], fallback_msg: str,
         return fallback_msg
     return response
 
+def print_goodbye(messages_exchanged: int, unmatched_count: int) -> None:
+  
+    border = "=" * 60
+    print(f"\n{COLOR_THEME['SYSTEM']}{border}")
+    print(f"{' SESSION SUMMARY ':^60}")
+    print(f"{border}")
+    print(f" Total Messages Exchanged : {messages_exchanged}")
+    print(f" Unmatched Inputs Logged  : {unmatched_count}")
+    print(f"{border}")
+    print(f"{'Goodbye! Thank you for using Decodabot.':^60}")
+    print(f"{border}{COLOR_THEME['RESET']}")
+
+
