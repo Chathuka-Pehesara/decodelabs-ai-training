@@ -94,4 +94,9 @@ def main() -> None:
             print(f"{COLOR_THEME['BOT']}Decodabot: {goodbye_resp}{COLOR_THEME['RESET']}")
             messages_exchanged += 1
             break
+        
+        # Process standard responses
+        response = get_response(sanitized, RESPONSES, fallback_message, unmatched_log)
+        print(f"{COLOR_THEME['BOT']}Decodabot: {response}{COLOR_THEME['RESET']}")
+        messages_exchanged += 1
 
