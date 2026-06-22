@@ -42,3 +42,13 @@ RESPONSES: Dict[str, str] = {
     "help": "Available commands: 'hello', 'hi', 'who are you', 'what can you do', 'thanks', 'how are you', 'quote', 'help', 'exit', 'quit', 'bye'.",
     "quote": "Here is a classic: 'First, solve the problem. Then, write the code.' - John Johnson"
 }
+
+
+def get_response(user_input:str, responses_db: Dict[str,str], fallback_msg: str, unmatched_log: List[str]) -> str: 
+ 
+    response = responses_db.get(user_input)
+    if response is None:
+        unmatched_log.append(user_input)
+        return fallback_msg
+    return response
+
