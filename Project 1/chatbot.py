@@ -109,8 +109,5 @@ def main() -> None:
         print_goodbye(messages_exchanged, len(unmatched_log))
 
 
-    # Output final summary before program exits
-    print_goodbye(messages_exchanged, len(unmatched_log))
-
 if __name__ == "__main__":
     main()
