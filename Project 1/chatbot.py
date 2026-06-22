@@ -82,5 +82,16 @@ def main() -> None:
         except EOFError:
             break
             
-        # Temporarily pass to avoid syntax errors
-        pass
+        sanitized = sanitize_input(raw_input)
+        
+        # Avoid crashing or processing empty inputs
+        if not sanitized:
+            continue
+            
+        # Intercept termination commands
+        if sanitized in ["exit", "quit", "bye"]:
+            goodbye_resp = get_response(sanitized, RESPONSES, fallback_message, unmatched_log)
+            print(f"{COLOR_THEME['BOT']}Decodabot: {goodbye_resp}{COLOR_THEME['RESET']}")
+            messages_exchanged += 1
+            break
+
